@@ -169,7 +169,7 @@ addopts = """
 
 [tool.black]
 line-length = 88
-target-version = ['py37', 'py38', 'py39', 'py310']
+target-version = ['py36', 'py37', 'py38', 'py39', 'py310']
 # diff = true
 extend-exclude = """
 # A regex preceded with ^/ will apply only to files and directories
@@ -190,29 +190,23 @@ template = "changelog.d/_template.rst"
 # issue_format = "`#{issue} <https://github.com/python-attrs/attrs/issues/{issue}>`_"
 # issue_format = ":gh:`{issue}`"
 
-# [tool.towncrier.fragment.breaking]
-# name = "Breaking Changes"
-# showcontent = true
+[tool.towncrier.fragment.feature]
+name = "Features"
 
 [tool.towncrier.fragment.deprecation]
 name = "Deprecations"
 
-[tool.towncrier.fragment.feature]
-directory = "feature"
-name = "Features"
-
-# [tool.towncrier.fragment.improvement]
-# name = "Improvements"
-# showcontent = true
-
 [tool.towncrier.fragment.bugfix]
-name = "Bug Fixes"
+name = "Bug fixes"
 
 [tool.towncrier.fragment.doc]
-name = "Improved Documentation"
+name = "Improved documentation"
 
 [tool.towncrier.fragment.trivial]
 name = "Trivial/Internal Changes"
 
 [tool.towncrier.fragment.removal]
 name = "Removals"
+
+[tool.towncrier.fragment.breaking]
+name = "Breaking Changes"
